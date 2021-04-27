@@ -1,25 +1,20 @@
-# Aula: Componente Summary
+# Aula: Componente TransactionsTable
 
 ![](https://i.imgur.com/kJiiWk7.png)
 
-## Dashboard
-  * Dashboard é onde ficará os Summary de transactions e a tabela
-  * Ele também tem o container que centraliza o conteúdo
-
-## Criando a estrutura HTML do Sumary
+## Criando a estrutura HTML do TransactionsTable
   * Importa o container dos estilos
-  * São 3 Sumarys então o diego criou 3 divs
-  * Dentro das divs ele usou &lt;header&gt; e dentro do header um &lt;p&gt;para o tipo da transaction e uma &lt;img&gt;
-  * Abaixo do header colocou o valor dentro de um &lt;strong&gt;
+  * Cria a &lt;table&gt; com os dados estáticos
 
-## Estilizando Summary
-  * Usou display grid para os 3 Summary
-  * Definiu a cor do background e cor do texto
-  * Espaçamento interno com padding e arredondamento das bordas com border-radios
-  * Display flex no &lt;header&gt;
-  * No valor das transaction dentro do &lt;strong&gt; aumentou a fonte um margin top
+## Estilizando TransactionsTable
+  * Um margin top para distanciar dos sumarys
+  * Uma largura de 100%
+  * Border spacing muito usado em tabela para espaçamentos do items
+  * Estilizando &lt;th&gt; da &lt;table&gt; uma cor mais opaca, um aumento da fonte pra 400 e alinha o texto a esquerda
+  * Estilizando &lt;td&gt; da &lt;table&gt; um padding de 1rem 2rem, border 0, background branco e cor do texto opaca, um pequeno arredondamento da borda de 0.25rem
+  * Para o primeiro &lt;td&gt; a cor do texto é mais forte
+  * Para transactions do tipo deposito o valor precisa estar verde, então criemos uma className="deposit"
+  * Para transactions do tipo retirada o valor precisa estar vermelho, então criemos uma className="withdraw"
 
-## Deixando o Summary Total com a cor verde
-  * Na div total criou uma className="highlight-background"
-  * na &lt;div&gt; &.highlight-background
-  * background green e color white
+
+
