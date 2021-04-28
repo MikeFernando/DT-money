@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { darken } from 'polished';
 
 export const Container = styled.form`
@@ -53,19 +53,24 @@ export const TransactionTypeButton = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+`;
 
-  button {
+interface RadioBoxProps {
+  isActive: boolean;
+}
+export const RadioBox = styled.button<RadioBoxProps>`
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     margin: 1rem 0;
     font-size: 1rem;
     padding: 1rem 0;
     border-radius: 0.25rem;
     border: 1px solid #d7d7d7;
-    background: transparent;
     color: var(--text-title);
+
+    background: ${props => props.isActive ? '#ccc' : 'transparent'} ;
 
     transition: border-color 0.2s;
 
@@ -78,5 +83,4 @@ export const TransactionTypeButton = styled.div`
       height: 30px;
       margin-right: 0.5rem;
     }
-  }
 `;
