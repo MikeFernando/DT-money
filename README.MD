@@ -1,4 +1,4 @@
-# Aula: Inserindo transação na API
+# Aula: Inserindo transação na API e formatando valores
 * Utilizando miragaJS
 
 ![](https://imgur.com/tpaagcC.png)
@@ -15,18 +15,8 @@ e deixe a interface mais amigável
 * Essa função seeds recebe uma propriedade chamada server
 * Esse server chama o db e db recebe loadData ficando assim server.db.loadData()
 * Esse loadData recebe a entidade com os dados que eu quero retornar ex:
-  - server.db.loadData({
-    transaction: [
-      {
-        id: 1,
-        title: freelance,
-        tipo: deposit,
-        amount: 6000,
-        created_at: new Date('2020-04-29 18:55')
-      },
-      // mais dados 
-    ]
-  })
+  - server.db.loadData({})
 * No arquivo TransactionTable que é o componente que lista os dados na tabela
 * Criei um estado de transactions
 * Percorri esse array de transactions com map retornando os dados buscados
+* Formatei os valores e as datas com Intl.
