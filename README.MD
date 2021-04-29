@@ -1,32 +1,32 @@
 # Aula: Inserindo transação na API
 * Utilizando miragaJS
 
-![](https://imgur.com/J7KSwML.png)
-
-## Oque mudou do commit anterior?
-* Todos os dados foram salvos na variável data e inseridos na rota transactions api.post('/transactions', data)
-* Foi criado um método POST no arquivo index para inserir os dados salvos no estado ex:
-  - this.post('/transactions', (schema, request) => {
-    // codigo aqui
-  })
-  - schema ainda não foi usado
-  - request é onde está os dado enviados 
-  - para ter acesso á esses dados é através do request.requestBody;
-  - requestBody retorna os dados em string, então para transformar eles em objeto utilizei JSON.parse()
-
-## Entendendo sobre models
-* models são os nomes das entidades que será salva no miragejs ex: 
-  - models: {
-    transaction: Model
-  }
-  - { Model } precisa ser importado do miragejs  
+![](https://imgur.com/tpaagcC.png)
+![](https://imgur.com/KRUffgy.png)
 
 ## Pontos importantes
-* Até aqui os dados ja vinham pré cadastrados do miragejs
-* Mas agora já é possível enviar dados para o miragejs através do método POST
-* Então é preciso juntar eles através dos models e retornar todos
-* No retorno do método this.post vamos utilizar o parâmetro schema(banco de dados)
-  - No 1º parâmetro será o model, e no 2º os dados;
-  - Ex: return schema.create('transaction', data)
-* No método GET que retorna os dados, vamos retornar todos dados daquela entidade
-  -Ex return schema.all('transaction')
+* Nossa api utilizando o miragejs está com o banco de dados vazio []
+* E o HTML do componente TransactionTable está retornando uma tabela com dados estáticos
+* Mas existe uma forma de deixar dados pré cadastrados na aplicação, para que o banco de dados ja inicie com dados
+e deixe a interface mais amigável
+
+## Oque mudou do commit anterior?
+* Foi adicionado uma funcão seeds() no createServer
+* Essa função seeds recebe uma propriedade chamada server
+* Esse server chama o db e db recebe loadData ficando assim server.db.loadData()
+* Esse loadData recebe a entidade com os dados que eu quero retornar ex:
+  - server.db.loadData({
+    transaction: [
+      {
+        id: 1,
+        title: freelance,
+        tipo: deposit,
+        amount: 6000,
+        created_at: new Date('2020-04-29 18:55')
+      },
+      // mais dados 
+    ]
+  })
+* No arquivo TransactionTable que é o componente que lista os dados na tabela
+* Criei um estado de transactions
+* Percorri esse array de transactions com map retornando os dados buscados
