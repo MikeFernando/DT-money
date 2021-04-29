@@ -2,7 +2,7 @@
 * Utilizando miragaJS
 
 ![](https://imgur.com/tpaagcC.png)
-![](https://imgur.com/KRUffgy.png)
+![](https://imgur.com/wCzyS2O.png)
 
 ## Pontos importantes
 * Nossa api utilizando o miragejs está com o banco de dados vazio []
