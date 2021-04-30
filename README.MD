@@ -1,19 +1,20 @@
-# Contextos e hooks
+# Carregando transações
 
 ![](https://imgur.com/ilan0K9.png)
 
-### Contexto (context) disponibiliza uma forma de passar dados entre a árvore de componentes sem precisar passar props manualmente em cada nível.
-
-## Quando Usar Contexto?
-* Contexto é indicado para compartilhar dados que podem ser considerados “globais” para a árvore de componentes do React. Usuário autenticado ou o idioma preferido, são alguns casos comuns.
+## Resumo do commit
+* Carregar os dados da tabela dentro do contexto em um arquivo separado, porque mais pra frente podemos ter mais contextos
+e ficaria muito complexo o arquivo App.
+* Assim tanto o componente Sumary como o componente TransactionTable terão acesso as informações para
+poder consumi-las da maneira que eles precisarem
 
 ## Oque mudou do commit anterior?
-* Criação de contextos no React
-* De início criei um arquivo chamado TransactionContext na raiz do projeto
-* Nele foi importado do 'react' o { createContext }
-* No createContext é o tipo de dado que o context vai ser, ou seja um objeto, um array, ou uma string.
-* Então esse TransactionContext precisa ficar por volta de todos os componentes que eu quero que tenha acesso aquelas informações
-* O TransactionContex tem um atributo chamado Provider, é nessa propriedade que setamos o valor atual que será passado para os componentes filhos
-* No componente App apliquei o TransactionContext.Provider
-* Para obter o valor do contexto é importando o useContext que é um  hook do react
+* Mudei a extensão do TransactionContext de ts para tsx, porque ele será um componente
+* Dentro dele vou criar e esportar uma função TransactionProvider
+* Migrar o estado e a chamada a api de TransactionTable pra dentro do TransactionProvider
+* Migrar a tipagem de Transactions do arquivo &lt;TransactionTable&gt; (ela é usada pra tipar o estado e o context)
+* O Retorno de TransactionProvider será &lt;TransactionProvider.Provider ={transaction}&gt;
+esse componente será o oque englobar os componentes dentro do App.tsx
+* Como TransactionProvider terá filhos dentro dele, precisamos informar o children e tipa-lo com ReactNode
+* Trocar no arquivo App.tsx &lt;TransactionContext.provider&gt; pelo contexto que criei &lt;TransactionProvider&gt;
 
