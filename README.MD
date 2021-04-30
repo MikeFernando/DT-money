@@ -10,7 +10,7 @@ poder consumi-las da maneira que eles precisarem
 
 ## Oque mudou do commit anterior?
 * Mudei a extensão do TransactionContext de ts para tsx, porque ele será um componente
-* Dentro dele vou criar e esportar uma função TransactionProvider
+* Dentro dele vou criar e exportar uma função TransactionProvider
 * Migrar o estado e a chamada a api de TransactionTable pra dentro do TransactionProvider
 * Migrar a tipagem de Transactions do arquivo &lt;TransactionTable&gt; (ela é usada pra tipar o estado e o context)
 * O Retorno de TransactionProvider será &lt;TransactionProvider.Provider ={transaction}&gt;
