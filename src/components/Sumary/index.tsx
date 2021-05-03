@@ -9,7 +9,23 @@ import { Container } from "./styles";
 export function Sumrary() {
   const { transactions } = useContext(TransactionContext)
 
-  console.log(transactions)
+  const sumary = transactions.reduce((acc, transaction) => {
+    if (transaction.type === 'deposit') {
+      acc.deposits += transaction.amount
+      acc.total += transaction.amount
+    }
+
+    if (transaction.type === 'withdraw') {
+      acc.withdraws += transaction.amount
+      acc.total -= transaction.amount
+    }
+
+    return acc
+  }, {
+    deposits: 0,
+    withdraws: 0,
+    total: 0,
+  })
 
   return (
     <Container>
@@ -18,7 +34,7 @@ export function Sumrary() {
           <p>Entradas</p>
           <img src={incomeImg} alt="Entradas" />
         </header>
-        <strong>R$ 17.400,00</strong>
+        <strong>{sumary.deposits}</strong>
       </div>
 
       <div>
@@ -26,7 +42,7 @@ export function Sumrary() {
           <p>Saídas</p>
           <img src={outcomeImg} alt="Saídas" />
         </header>
-        <strong>- R$ 1.259,00</strong>
+        <strong>- {sumary.withdraws}</strong>
       </div>
 
       <div className="highlight-background">
@@ -34,7 +50,7 @@ export function Sumrary() {
           <p>Total</p>
           <img src={totalImg} alt="Total" />
         </header>
-        <strong>R$ 16.141,00</strong>
+        <strong>{sumary.total}</strong>
       </div>
     </Container>
   )
