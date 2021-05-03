@@ -1,8 +1,6 @@
 # Calculando resumo
 
-![](https://imgur.com/e6JJmnG.png)
-
-![](https://imgur.com/3NLiUwU.png)
+![](https://imgur.com/ovZyP5w.png)
 
 ## Resumo do commit
 * Criação do hook useTransactions
