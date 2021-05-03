@@ -7,7 +7,7 @@
 * Fechando modal após cadastro
 
 ## Oque mudou do commit anterior?
-<<<<<<< HEAD
+
 * Pra fechar o modal é só chamar o método onRequestClose()
 * Porem o modal só deve ser fechado quando a criação da transação der certo
 * Para aguardar esse processo de criação terminar, deixei a função como assíncrona(async/await)
@@ -20,7 +20,7 @@ tanto na função do botão(handleNewTransaction), quanto na função do context
 de nunca alterar um dado, sempre copiar depois incluir.
 * Como não tinha o dado created_at, inclui esse dado criando um objeto com a propriedade created_at: new Date()
 * Ai coloquei no estado dando setTransactions(...transactions, transaction)
-=======
+
 
 * No componente NewTransactionModal vamos utilizar o contexto de transação
 * Todo código de criação de uma nova transação, eu tirei do Modal e mudei pro contexto
@@ -41,4 +41,4 @@ esse componente será o oque englobar os componentes dentro do App.tsx
 * Como TransactionProvider terá filhos dentro dele, precisamos informar o children e tipa-lo com ReactNode
 * Trocar no arquivo App.tsx &lt;TransactionContext.provider&gt; pelo contexto que criei &lt;TransactionProvider&gt;
 
->>>>>>> 48f6dda8ad23f9fef7dea9dc26242e8b19b169cb
+
