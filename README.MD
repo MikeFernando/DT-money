@@ -19,7 +19,7 @@ tanto na função do botão(handleNewTransaction), quanto na função do context
 * E usei esse dado dentro do response para por no estado de transaction, claro usando o princípio da imutabilidade
 de nunca alterar um dado, sempre copiar depois incluir.
 * Como não tinha o dado created_at, inclui esse dado criando um objeto com a propriedade created_at: new Date()
-* Ai coloquei no estado dando setTransactions(...transactions, transaction)
+* Ai coloquei no estado dando setTransactions([...transactions, transaction])
 
 
 * No componente NewTransactionModal vamos utilizar o contexto de transação
