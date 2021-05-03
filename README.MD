@@ -24,7 +24,7 @@
   - utilizar a biblioteca modal do react
   - estrutura de um formulário
   - estilizar formulário com styled-components
-  - savlar dados dos campos dos no estado
+  - salvar dados dos campos dos no estado
   - formatar valores com Intl
  * Contextos:
    - como criar hooks
